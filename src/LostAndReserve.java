@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-class Solution {
+class Solution5 {
 	public int solution(int n, int[] lost, int[] reserve) {
 		int answer = 0;
 		int result = n - lost.length;
