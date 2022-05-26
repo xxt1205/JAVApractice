@@ -34,7 +34,7 @@ class Solution5 {
 		}
 		System.out.println(lost1);
 		System.out.println(reserve1);
-		for(int j = 0; lost1.size() - 1 >= j; j++) {
+		for(int j = 0; lost1.size() > j; j++) {
 			
 			for(int i = 0; reserve1.size() > i; i++) {
 				
