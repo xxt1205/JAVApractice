@@ -20,11 +20,13 @@
 //[1, 5, 2, 6, 3, 7, 4]를 2번째부터 5번째까지 자른 후 정렬합니다. [2, 3, 5, 6]의 세 번째 숫자는 5입니다.
 //[1, 5, 2, 6, 3, 7, 4]를 4번째부터 4번째까지 자른 후 정렬합니다. [6]의 첫 번째 숫자는 6입니다.
 //[1, 5, 2, 6, 3, 7, 4]를 1번째부터 7번째까지 자릅니다. [1, 2, 3, 4, 5, 6, 7]의 세 번째 숫자는 3입니다.
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
+
+
 import java.util.Arrays;
-import java.util.stream.Stream;
-public class K번쨰수 {
+
+
+public class K번째수 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
