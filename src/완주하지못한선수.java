@@ -24,17 +24,18 @@
 //예제 #3
 //"mislav"는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.
 
-import java.util.ArrayList;
+
+
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
 
 public class 완주하지못한선수 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Solution10 s = new Solution10();
-		String[] participant = {"marina", "josipa", "nikola","nikola", "vinko", "filipa","filipa","jason"};
-		String[] completion = {"josipa", "filipa", "marina", "nikola","jason"};
+		String[] participant = {"mislav", "stanko", "mislav", "ana"};
+		String[] completion = {"stanko", "ana", "mislav"};
 		s.solution(participant, completion);
 	}
 
@@ -42,24 +43,43 @@ public class 완주하지못한선수 {
 class Solution10 {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
+        
         Arrays.sort(participant);
         Arrays.sort(completion);
-        List<String> pt = Arrays.asList(participant);
-        List<String> ct = Arrays.asList(completion);
-        
-        List<String>prt = new ArrayList<String>();
-        List<String>crt = new ArrayList<String>();
-        for(int i=0; pt.size() > i; i++) {
-        	if(pt.get(i) == pt.get(i + 1)) {
-        		prt.add(pt.get(i));
-        		pt.remove(i + 1);
-        		
-        	}
-        }
-        for(String i : pt) {
-        	System.out.println(i);
-        }
-        
+System.out.println(Arrays.toString(participant));
+System.out.println(Arrays.toString(completion));
+		int count = 0;
+		int count2 = 0;
+		String result = null;
+		for(int i = 0; participant.length -1> i; i++) {
+			
+				if(participant[i].equals(participant[i+1])) {
+					count++;
+					result=participant[i];
+				}
+			}
+		
+		for(int i = 0; completion.length -1> i; i++) {
+			
+				if(completion[i].equals(completion[i+1])) {
+					count2++;
+					
+				}
+			}
+			
+		
+		System.out.println(count);
+		System.out.println(count2);
+		if(count == count2) {	
+			answer = participant[participant.length-1];
+		}else if(count != count2) {
+			answer = result;
+		}
+		
+		
+	
+		System.out.println("-----------------");
+        System.out.println(answer);
         
         return answer;
     }
