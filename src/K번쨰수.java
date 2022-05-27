@@ -32,7 +32,7 @@ public class K번쨰수 {
 		int[] array = {1, 5, 2, 6, 3, 7, 4};
 		int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
 		
-		System.out.println(s.solution(array, commands));
+		System.out.println(Arrays.toString(s.solution(array, commands)));
 		
 	}
 
@@ -40,35 +40,31 @@ public class K번쨰수 {
 class Solution9 {
     public int[] solution(int[] array, int[][] commands) {
         int[] answer = {};
-        Arrays.sort(array);
-//        Arrays.deesort(commands);
-//        int[] commands2 = new int[commands.length*commands[0].length];
-//       
-//        
-//       for(int i = 0; commands.length > i; i++) {
-//    	   for(int j = 0; commands[i].length > j; j++) {
-//    		   commands2[(i*commands[i].length) + j] = commands[i][j];
-//    		  
-//    	   }
-//       }
-//        System.out.println(Arrays.deepToString(commands));
-//        Arrays.sort(commands2);
-        int[] result = null;
-        for(int i = 0; commands.length > i; i++) {
-        	
-        	for(int j = 0; commands[i].length > j; j++) {
-        		for(int l = commands[i][0]; commands[i][1] >= l; l++) {
-        			int a = 0;
-        			int b = commands[i][0];
-        			result = new int[(commands[i][1] - commands[i][0]) + 1];
-        			result[a] = array[b];
-        			System.out.println(Arrays.toString(result));
-        			
-        		}
-        	}
-        }
-       
         
+     
+        int[] result = null;
+        answer = new int[commands.length];
+        	for(int i = 0; commands.length > i; i++) {
+        		result = new int[(commands[i][1] - commands[i][0]) + 1];
+       		
+        		int[] result2 = new int[result.length];
+        		for(int j = 0; result.length > j; j++) {
+
+        			
+        			result2[j] = array[(commands[i][0] -1) + j];
+        			
+        			 
+        		}
+        		
+        		Arrays.sort(result2);
+        		System.out.println(Arrays.toString(result2));
+        		answer[i] = result2[commands[i][2] - 1];
+        		System.out.println(Arrays.toString(answer));
+        		System.out.println("------------------------");
+        		
+        }
+        	
+        	
         return answer;
     }
 }
