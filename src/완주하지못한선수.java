@@ -60,7 +60,8 @@ class Solution10 {
 			}
 
 		}
-
+		System.out.println(Arrays.toString(participant));
+		System.out.println(Arrays.toString(completion));
 		return answer;
 	}
 }
