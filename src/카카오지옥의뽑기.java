@@ -30,7 +30,7 @@ class Solution11 {
         
         
         
-        int x = 0;
+        
         for(int i = 0; moves.length > i; i++) {
         	for(int j = 0; board.length > j; j++) {
         		if(board[j][moves[i] - 1] != 0) {
@@ -38,27 +38,25 @@ class Solution11 {
         			board[j][moves[i] -1] = 0;
         			
         			if(store.size() > 1) {
-        				if(store.get(x + 1) == store.get(x)) {
-            				System.out.println(x);
+        				if(store.get(store.size()-2) == store.get(store.size()-1)) {
+            				
             				
             				System.out.println(store);
         					answer+= 2;
-            				store.remove(x);
+            				store.remove(store.size()-2);
             				System.out.println(store);
-            				store.remove(x);
+            				store.remove(store.size()-1);
             				System.out.println(store);
-            				x =store.size() - 1;
-            				System.out.println("x뺀값"+x);
+            				
+            				
             			}else {
-            				x++;
+            				
             			}
         			}
         			
         			
         			System.out.println("스토어" + store);
         			break;
-        		}else if(board[j][moves[i] - 1] == 0) {
-        			
         		}
         	}
         }
