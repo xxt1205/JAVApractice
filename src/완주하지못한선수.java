@@ -26,61 +26,42 @@
 
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+
 
 public class 완주하지못한선수 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Solution10 s = new Solution10();
-		String[] participant = {"mislav", "stanko", "mislav", "ana"};
-		String[] completion = {"stanko", "ana", "mislav"};
+		String[] participant = {"marina", "josipa", "nikola", "vinko", "filipa"};
+		String[] completion = {"josipa", "filipa", "marina", "nikola"};
 		s.solution(participant, completion);
 	}
 
 }
+
 class Solution10 {
-    public String solution(String[] participant, String[] completion) {
-        String answer = "";
-        
-        Arrays.sort(participant);
-        Arrays.sort(completion);
-System.out.println(Arrays.toString(participant));
-System.out.println(Arrays.toString(completion));
-		int count = 0;
-		int count2 = 0;
-		String result = null;
-		for(int i = 0; participant.length -1> i; i++) {
-			
-				if(participant[i].equals(participant[i+1])) {
-					count++;
-					result=participant[i];
-				}
+	public String solution(String[] participant, String[] completion) {
+		String answer = "";
+
+		Arrays.sort(participant);
+		Arrays.sort(completion);
+		ArrayList<String> findDup = new ArrayList<>(Arrays.asList(completion));
+		findDup.add(completion.length, "0");
+		int findDupSize = findDup.size();
+		String cp[] = findDup.toArray(new String[findDupSize]);
+
+		for (int i = 0; cp.length > i; i++) {
+			if (!participant[i].equals(cp[i])) {
+				answer = participant[i];
+				break;
 			}
-		
-		for(int i = 0; completion.length -1> i; i++) {
-			
-				if(completion[i].equals(completion[i+1])) {
-					count2++;
-					
-				}
-			}
-			
-		
-		System.out.println(count);
-		System.out.println(count2);
-		if(count == count2) {	
-			answer = participant[participant.length-1];
-		}else if(count != count2) {
-			answer = result;
+
 		}
-		
-		
-	
-		System.out.println("-----------------");
-        System.out.println(answer);
-        
-        return answer;
-    }
+
+		return answer;
+	}
 }
+
