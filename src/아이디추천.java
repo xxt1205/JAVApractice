@@ -111,26 +111,22 @@ public class 아이디추천 {
 class Solution12 {
 	public String solution(String new_id) {
 		String answer = "";
-		System.out.println(new_id);
-		System.out.println(new_id.length());
-		int num = 0;
-		for (int i = 0; new_id.length() > i; i++) {
-			num++;
-		}
+		
+		
 
 		if (new_id != null) {
 			new_id = new_id.toLowerCase();
-			System.out.println(new_id);
+			
 			new_id = new_id.replaceAll("[^0-9a-z-_.]", "");
 			new_id = new_id.replaceAll("[.]{2,}", ".");
 			while (new_id.startsWith(".")) {
 				new_id = new_id.substring(1);
-				System.out.println(new_id);
+				
 
 			}
 			while (new_id.endsWith(".")) {
 				new_id = new_id.substring(0, new_id.length() - 1);
-				System.out.println(new_id);
+				
 			}
 			if (new_id.length() == 0) {
 				new_id = "a";
