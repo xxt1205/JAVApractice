@@ -102,7 +102,7 @@ public class 아이디추천 {
 
 	public static void main(String[] args) {
 		Solution12 s = new Solution12();
-		s.solution("=.=");
+		s.solution("...!@BaT#*..y.abcdefghijklm");
 		
 	}
 
@@ -114,58 +114,43 @@ class Solution12 {
 		System.out.println(new_id);
 		System.out.println(new_id.length());
 		int num = 0;
-		for(int i = 0; new_id.length() > i; i++) {
+		for (int i = 0; new_id.length() > i; i++) {
 			num++;
 		}
-		
-		
-	if(new_id != null) {
-		new_id = new_id.toLowerCase();
-		new_id = new_id.replaceAll("[^0-9a-z-_.]", "");
-		System.out.println(new_id);
-		while(new_id.startsWith(".")){
-			new_id = new_id.substring(1);
+
+		if (new_id != null) {
+			new_id = new_id.toLowerCase();
 			System.out.println(new_id);
-			
-		}
-		while(new_id.endsWith(".")) {
-			new_id = new_id.substring(0, new_id.length()-1);
-			System.out.println(new_id);
-		}
-		
-		new_id = new_id.replace("..", ".");
-		System.out.println(new_id);
-		System.out.println(new_id.length());
-	}
-		if(new_id.equals("")) {
-			
-			new_id = "a";
-			System.out.println(num);
-			while(new_id.length() < num -1) {
-				new_id += new_id;
-				
-			}
-			
-		}
-		if(new_id.length()> 15) {
-			new_id = new_id.substring(0,15);
-			while(new_id.startsWith(".")){
+			new_id = new_id.replaceAll("[^0-9a-z-_.]", "");
+			new_id = new_id.replaceAll("[.]{2,}", ".");
+			while (new_id.startsWith(".")) {
 				new_id = new_id.substring(1);
 				System.out.println(new_id);
-				
+
 			}
-			while(new_id.endsWith(".")) {
-				new_id = new_id.substring(0, new_id.length()-1);
+			while (new_id.endsWith(".")) {
+				new_id = new_id.substring(0, new_id.length() - 1);
 				System.out.println(new_id);
 			}
-		}else if(new_id.length() < 3) {
-			while(new_id.length() == 2) {
-				new_id= new_id + new_id.substring(new_id.length()-1);
-				
-			}
-				
-		}
+			if (new_id.length() == 0) {
+				new_id = "a";
 
-		return answer;
+			}
+			if (new_id.length() > 15) {
+				new_id = new_id.substring(0, 15).replaceAll("[.]$","");
+				
+
+			} else if (new_id.length() < 3) {
+				while (new_id.length() < 3) {
+					new_id = new_id + new_id.substring(new_id.length() - 1);
+
+				}
+
+			}
+
+		}
+		
+
+		return answer = new_id;
 	}
 }
