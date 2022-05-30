@@ -102,7 +102,7 @@ public class 아이디추천 {
 
 	public static void main(String[] args) {
 		Solution12 s = new Solution12();
-		s.solution("...!@BaT#*..y.abcdefghijklm");
+		System.out.println(s.solution("...!@BaT#*..y.abcdefghijklm"));
 		
 	}
 
