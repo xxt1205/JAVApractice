@@ -17,31 +17,36 @@ class Solution14 {
     public String solution(int[] numbers, String hand) {
     	
     	String answer = "";
-    	int [] num = {2, 5, 8, 0};
-    	int[][] num2 = {{1,4,7},{2,5,8,0},{3,6,9}};
-    	ArrayList<Integer> middle = new ArrayList<Integer>();
-    	for(int i : num) {
-    		middle.add(i);
-    	}
+    	String left_st = "*";
+    	String right_st = "#";
+    	
+    	
     	int[] startH = {0, 0};
     	ArrayList<Integer> moveL = new ArrayList<Integer>();
     	ArrayList<Integer> moveR = new ArrayList<Integer>();
     	
     	
     	for(int i = 0; numbers.length > i; i++) {
+    		int aNum = numbers[i];
     		
-    		
-    		
-    		switch(numbers[i]) {
+    		switch(aNum) {
     		case 1 : 
     		case 4 :
     		case 7 : answer.concat("L"); moveL.add(numbers[i]); startH[0] = 1;
     		case 3 :
     		case 6 :
     		case 9 : answer.concat("R"); moveR.add(numbers[i]);	startH[0] = 2;
+    		
+    		
     		}
+    		
     	}
         
         return answer;
     }
+    public double distance(int[] now, int[] location) {
+    	double result =0;
+    	return result;
+    }
 }
+   
