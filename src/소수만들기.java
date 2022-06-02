@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class 소수만들기 {
 
@@ -14,7 +14,7 @@ public class 소수만들기 {
 class Solution15 {
     public int solution(int[] nums) {
         int answer = 0;
-        Arrays.sort(nums);
+        
         for(int i =0 ; nums.length - 2> i; i++) {
 
         	for(int j =i + 1; nums.length - 1> j; j++) {
@@ -40,7 +40,7 @@ class Solution15 {
     		System.out.println(i);
     		System.out.println(Math.sqrt(num));
     		
-    		if(num % i ==0) {System.out.println("거짓");return false;}
+    		if(num % i == 0) {System.out.println("거짓");return false;}
     	}
     	System.out.println("참");
     	return true;
