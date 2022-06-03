@@ -5,14 +5,14 @@ public class rotto최고최저순위 {
 		
 		int[] lottos = { 44, 1, 0, 0, 31, 25 };
 		int[] win_nums = { 31, 10, 45, 1, 6, 19 };
-		Solution17 s = new Solution17();
+		Solution19 s = new Solution19();
 		s.solution(lottos, win_nums);
 
 	}
 
 }
 
-class Solution17 {
+class Solution19 {
 	public int[] solution(int[] lottos, int[] win_nums) {
 		 
 		int count = 0;
