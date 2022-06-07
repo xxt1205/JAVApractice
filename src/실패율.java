@@ -8,7 +8,7 @@ public class 실패율 {
 		int N = 5;
 		int[] stages2 = {4,4,4,4,4};
 		int N2 = 4;
-		s.solution(N2, stages2);
+		s.solution(N, stages);
 		
 
 	}
@@ -50,15 +50,23 @@ class Solution21 {
         Arrays.sort(result);
        
        int[] result3 = new int[N];
-        for(int i = N - 1; i >= 0; i++) {
-        	int count = 0;
+        for(int i = N - 1; i >= 0; i--) {
+        	int count = N;
         	for(int j = 0; N > j; j++) {
-        		if(j + 1 < N) {
+        		if(count < N) {
+        			if(result[j -1] == result[j]) {
+        				break;
+        			}else if(result2[i] == result[j]){
+        				result3[i] = j+1;
+            			count--;
+        			}
+ 
+        		} else if(result2[i] == result[j]) {
+        			result3[i] = j+1;
+        			count--;
+//        			System.out.println(result[i]);
         			
-        		}
-        		if(result2[i] == result[j]) {
-        			result3[i] = i;
-        			count++;
+        			
         		}
         	}
         	
