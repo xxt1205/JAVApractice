@@ -35,8 +35,7 @@ class Solution21 {
         		
         		
         	}
-//        	System.out.println(count);
-//        	System.out.println(round);
+
         	if(count == 0) {
         		result[i-1] = 0;
         		result2[i-1] = result[i-1];
