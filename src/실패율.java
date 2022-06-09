@@ -38,12 +38,11 @@ class Solution21 {
 
         	if(count == 0) {
         		result[i-1] = 0;
-        		result2[i-1] = result[i-1];
-        	}else {
+			}else {
         	result[i-1] = (count/round)*100;
-        	result2[i-1] = result[i-1];
-        	}
-    		System.out.printf("%.0f%%\n", result[i-1]);
+			}
+			result2[i-1] = result[i-1];
+			System.out.printf("%.0f%%\n", result[i-1]);
         	
         }
         Arrays.sort(result);
@@ -52,21 +51,7 @@ class Solution21 {
         for(int i = N - 1; i >= 0; i--) {
         	int count = N;
         	for(int j = 0; N > j; j++) {
-        		if(count < N) {
-        			if(result[j -1] == result[j]) {
-        				break;
-        			}else if(result2[i] == result[j]){
-        				result3[i] = j+1;
-            			count--;
-        			}
- 
-        		} else if(result2[i] == result[j]) {
-        			result3[i] = j+1;
-        			count--;
-//        			System.out.println(result[i]);
-        			
-        			
-        		}
+
         	}
         	
         }
