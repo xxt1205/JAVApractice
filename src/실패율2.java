@@ -38,6 +38,7 @@ class Solution25 {
             mp.put(i+1,result2[i]);
         }
         List<Integer> result3 = new ArrayList<>(mp.keySet());
+        System.out.println(result3);
         Collections.sort(result3,((o1, o2) -> (mp.get(o2).compareTo(mp.get(o1)))));
         int [] answer = new int[N];
         for (int i = 0; i < N; i++){
